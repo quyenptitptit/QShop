@@ -1,0 +1,44 @@
+* {
+    margin: 0;  
+    padding: 0;
+    
+  }
+
+.hero-section{
+    background-image: url("https://source.unsplash.com/L1jYYtjgIic");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    box-sizing: border-box;
+}
+.hero-section-main{
+    background-color: rgba(22, 22, 22, 0.7);
+    display: flex;
+    justify-content: center;   
+    padding: 30px;
+    height: 600px;
+}
+.hero-section-into-text{
+    padding: 40px ;
+    width: 90%;
+    margin-bottom: 30px;
+    border:2px solid white !important;
+    border-radius:30px !important;   
+    
+}
+.hero-section-into-text h1{
+    font-size: 60px !important;
+    letter-spacing: 2px;
+    font-weight: 800;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; 
+    color: white; 
+    /* font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; */
+     
+}
+.hero-section-into-text p{
+    width: 40%;
+    letter-spacing: 1px;
+    color: white;
+    font-size: 17px !important;
+    float: right!important;
+    font-family: 'Courier New', Courier, monospace;
+}

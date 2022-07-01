@@ -1,0 +1,50 @@
+.introduction {
+    margin: 0px;
+    display: flex;
+    box-sizing: border-box;
+}
+
+.introduction-title {
+    width: 20%;
+    background-color: rgb(48, 44, 44);
+    color: white;
+    padding: 200px 30px ;
+}
+
+.intro-title {
+    border-left: 7px solid var(--primary-color);
+    font-size: 150%;
+    margin: 30px 5px;
+    padding: 10px 0;
+}
+
+.intro-title h1 {
+    background-color:  var(--primary-color);
+    padding: 5px;
+}
+.intro-title h2{
+    padding-left: 5px;
+}
+
+.intro-btn {
+    font-size: 150%;
+    color: white;
+    background-color: var(--primary-color);
+    border-radius: 5px;
+    padding: 5px 15px;
+    cursor: pointer;
+}
+
+.intro-btn:hover {
+    background-color: red;
+    color: var(--primary-color);
+}
+.introduction-paragraph {
+    padding: 20px;
+    background-color: #f1f1f1;
+    font-size: 120%;
+}
+
+.introduction-paragraph p {
+    font-size: 120%;
+}

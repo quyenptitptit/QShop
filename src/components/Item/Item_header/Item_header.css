@@ -1,0 +1,14 @@
+.item_header {
+    width:80%;
+    margin: auto;
+    font-size: 200%;
+    overflow: hidden;
+}
+
+.item_header-text-header{
+    margin: 80px 0px;
+    border-left:6px solid black;
+    padding-left:50px;   
+    text-transform: uppercase;
+    font-weight: 600; 
+}

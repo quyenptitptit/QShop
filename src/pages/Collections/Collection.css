@@ -1,0 +1,29 @@
+.collection {
+    display: block;
+    box-sizing: border-box;
+}
+
+.collection-header {
+    height: 200px;
+    text-align: center;
+    font-size: 350%;
+    padding-top: 100px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.span {
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 5px;
+}
+
+.collection-img {
+    display: flex;
+}
+
+img {
+    display: block;
+    
+    width: auto;
+    height: auto;
+  }

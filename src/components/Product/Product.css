@@ -1,0 +1,25 @@
+.product {
+    display: flex;
+}
+
+.product-header {
+    display: flex;
+    box-sizing: border-box;
+}
+
+.product-title {
+    background-color: #f1f1f1;
+    color: rgb(69, 67, 67);
+    font-size: 200%;
+    width: 25%;
+    border-right: 1px solid rgb(136, 130, 130);
+    box-sizing: border-box;
+    padding: 200px 50px; 
+    
+}
+.product-img {
+    width:75%;
+}
+.product-img img {
+    width: 100%;
+}
