@@ -12,8 +12,7 @@ function SignIn(props) {
 
     const [errMessage, setErrMessage] = useState('')
 
-    const [check, setCheck] = useState(true)
-    
+    const [data, setData] = useState(JSON.parse(localStorage.getItem('user') || '[]'))
 
     const handleOnClickLogIn = () => {
         props.setConditionLogIn(true)
@@ -60,7 +59,7 @@ function SignIn(props) {
 
     
     const handleOnClickSignUp = async (e) => {
-       
+       e.preventDefault()
         // const newUser = {
         //     userName,
         //     passWord,
@@ -74,7 +73,7 @@ function SignIn(props) {
         else if (password === '') {
             setErrMessage('Password id field is required')
         }
-        else if (password.length < 2) {
+        else if (password.length < 8) {
             setErrMessage('Password length greater eight')
         }
         else if (passwordAgain === '') {
@@ -93,18 +92,16 @@ function SignIn(props) {
             setErrMessage('')
             props.setConditionLogIn(true)
             props.setConditionSignIn(false)
-            console.log("check", inpval)
-            console.log("cdata", props.data)
-            setCheck(!check)
+            localStorage.setItem('user',JSON.stringify([...data,inpval]))
         }
     }
 
-    useEffect(() => {
+    // useEffect(() => {
 
-        localStorage.setItem('user',JSON.stringify([...props.data,inpval]))
-        props.setData([...props.data,inpval])
-        console.log("useEffect")
-    }, [check]);
+    //     localStorage.setItem('user',JSON.stringify([...data,inpval]))
+    //     // props.setData([...props.data,inpval])
+    //     // console.log("useEffect")
+    // }, []);
 
 
     return (

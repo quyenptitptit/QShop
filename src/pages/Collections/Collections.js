@@ -6,7 +6,7 @@ import Item_header from '../../components/Item/Item_header/Item_header'
 import Item_collection_spring from '../../components/Item/Item_collection_spring'
 import Item_collection_summer from '../../components/Item/Item_collection_summer'
 
-function Collections() {
+function Collections({cart, setCart}) {
   return (
     <div className='collection'>
       <div className='collection-header'>
@@ -15,13 +15,13 @@ function Collections() {
       </div>
 
       <div className='collection-img'>
-        <img src={collection} alt="collection" />
+        <img className='img-collection' src={collection} alt="collection" />
       </div>
 
       <Item_header name='Spring Fashion' />
-      <Item_collection_spring />
+      <Item_collection_spring cart={cart} setCart={setCart} />
       <Item_header name='Summer Fashion' />
-      <Item_collection_summer />
+      <Item_collection_summer cart={cart} setCart={setCart} />
       
     </div>
   )

@@ -5,13 +5,12 @@ import Item_men from '../../components/Item/Item_men'
 import men from '../../images/men.jpg'
 import './Men.css'
 
-function Men() {
+function Men({cart, setCart}) {
   return (
     <div>
-      <Product name="Men" image={men} />
+      <Product name="MEN COOL" image={men} />
       <Item_header name="What to wear ?" />
-      <Item_men />
-      <Item_header name="Accessory beautyful !!" />
+      <Item_men cart={cart} setCart={setCart} />
     </div>
   )
 }

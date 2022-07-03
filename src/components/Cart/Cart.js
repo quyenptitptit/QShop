@@ -1,16 +1,18 @@
 import React from 'react'
 import './Cart.css'
+import { Link } from 'react-router-dom';
 import { GrCart } from "@react-icons/all-files/gr/GrCart";
 
 
-function Cart(props, { cart, setCart }) {
+function Cart({ cart, setCart }) {
 
-  const handleClickBack = () => {
-    props.setConditionCart(false)
-  }
+  // const handleClickBack = () => {
+  //   props.setConditionCart(false)
+  // }
 
 
   const getTotalSum = () => {
+    // console.log('total', cart)
     return cart.reduce(
       (sum, { cost, quantity }) => sum + cost * quantity,
       0
@@ -27,6 +29,7 @@ function Cart(props, { cart, setCart }) {
       (item) => item.name === product.name
     ).quantity = amount;
     setCart(newCart);
+    console.log(newCart)
   };
 
   const removeFromCart = (productToRemove) => {
@@ -37,21 +40,25 @@ function Cart(props, { cart, setCart }) {
 
   return (
     <div className='cart_modal'>
-      <div className='cart_overlay'></div>
-
       <div className='cart_main'>
         <div className='cart_header'>
-          <h1>CART</h1>
+          <h1>SHOPPING CART</h1>
         </div>
 
         <div className='cart_body'>
-          {cart.length > 0 ?
-            <>
-              {cart.map((product, idx) => (
-                <div className="product" key={idx}>
-                  <h3>{product.name}</h3>
-                  <h4>${product.cost}</h4>
-                  <input
+          {cart.map((product) => (
+            <div className='cart_body-elements'>
+              <div className='cart_body-element'>
+                <img className='img-cartbody' src={product.img} alt={product.name} />
+                <div className='cart_body-element-main'>
+                  <div className='cart_body-element-name'>
+                    <h3>Name: {product.name}</h3>
+                    <p>Describe: High fashion<br /> goods</p>
+                  </div>
+
+                  <div className='cart_body-element-cost'>
+                    <p>Cost:     ${product.cost}</p>
+                    {/* <input
                     value={product.quantity}
                     onChange={(e) =>
                       setQuantity(
@@ -59,26 +66,36 @@ function Cart(props, { cart, setCart }) {
                         parseInt(e.target.value)
                       )
                     }
-                  />
-                  <img src={product.image} alt={product.name} />
-                  <button onClick={() => removeFromCart(product)}>
-                    Remove
-                  </button>
+                  /> */}
+                    <p>Quantity: {product.quantity}</p>
+                    <h4>Total:    ${product.cost * product.quantity}</h4>
+                  </div>
                 </div>
-              ))}
-              <div>Total Cost: ${getTotalSum()}</div>
-            </>
-            : 'There is no one in the cart'
-          }
+              </div>
+              <div className='cart_body-element-btn'>
+                <button onClick={() => removeFromCart(product)}>
+                  Remove
+                </button>
+              </div>
+            </div>
+          ))}
+
         </div>
 
         <div className='cart_footer'>
-          <button onClick={handleClickBack} className='btn_back'>Back</button>
-          <button className='btn_checkout'>Check out</button>
-          {cart.length > 0 && (
-            <button onClick={clearCart} className='btn-back'>Clear Cart</button>
-          )}
+          <div className='cart_footer-total'><h1>Total Cost: ${getTotalSum()}</h1></div>
+          <div className='cart_footer-btn'>
+            {cart.length > 0 && (
+              <button className='btn_back' onClick={clearCart}>Clear Cart</button>
+            )}
+            <Link to='/checkout'><button className='btn_checkout'>Check out</button></Link>
+          </div>
+
         </div>
+      </div>
+
+      <div className='cart_img'>
+
       </div>
     </div>
 
@@ -87,3 +104,4 @@ function Cart(props, { cart, setCart }) {
 }
 
 export default Cart
+

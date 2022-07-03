@@ -5,7 +5,7 @@
 }
 
 .item_element img {
-    max-width: 250px;
+    max-width: 200px;
     height: auto;
     overflow: hidden;
 }
@@ -33,4 +33,12 @@
 .item_element-btn button:hover {
     border: 2px solid black;
     background-color: rgb(100, 133, 199) ;
+}
+
+.item {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 0 160px;
+    padding-bottom: 40px;
 }

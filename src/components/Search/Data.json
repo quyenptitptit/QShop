@@ -1,0 +1,43 @@
+[
+    {"id":1,"name":"Girl","img":"/static/media/women1.75418805bc872d5de64f.jpg","cost":45},
+    {"id":2,"name":"Fuchsia","img":"/static/media/women2.fefac7c4ed704c8c3280.jpg","cost":35},
+    {"id":3,"name":"Helen","img":"/static/media/women3.070a26e68d93e48bcd35.jpg","cost":39},
+    {"id":4,"name":"Akisaha","img":"/static/media/women4.3fee490c002ba830f994.jpg","cost":44},
+    {"id":5,"name":"Rose","img":"/static/media/women5.60baa1e56e50d9bcaf29.jpg","cost":32},
+    {"id":6,"name":"Feburay","img":"/static/media/women6.ae3c2d2c96ac525a7807.jpg","cost":45},
+
+    {"id":1,"name":"Heydi","img":"/static/media/products1.b81e9b56c02b7006a34b.jpg","cost":30},
+    {"id":2,"name":"Fuchsia","img":"/static/media/products2.2e9728768396a4664e0a.jpg","cost":35},
+    {"id":3,"name":"Helen","img":"/static/media/products3.dd1ee942921f673e87a9.jpg","cost":37},
+    {"id":4,"name":"Simone","img":"/static/media/products4.3e3d68c4f021ebd3c252.jpg","cost":43},
+    {"id":5,"name":"Rocha","img":"/static/media/products5.75092ae69b58a60c7551.jpg","cost":26},
+    {"id":6,"name":"Fabricant","img":"/static/media/products6.e95e8e064b2fdd3b2ae3.jpg","cost":39},
+
+    {"id":1,"name":"Furusha","img":"/static/media/men1.c14f54655f69e7661a56.jpg","cost":45},
+    {"id":2,"name":"Fuchsia","img":"/static/media/men2.8b224b0e6740c11e749d.jpg","cost":35},
+    {"id":3,"name":"Hekei","img":"/static/media/men3.b930f78b8856d9767bfc.jpg","cost":39},
+    {"id":4,"name":"Akisaha","img":"/static/media/men4.19f0dafdd0babb7d73a0.jpg","cost":44},
+    {"id":5,"name":"Rumei","img":"/static/media/men5.c4a50fc5e41188ab6db8.jpg","cost":32},
+    {"id":6,"name":"Feb","img":"/static/media/men6.b49cb90cbfbee7f2cca2.jpg","cost":45},
+
+    {"id":1,"name":"Liam","img":"/static/media/kids1.5e4ed67243e2c76f4a9d.jpg","cost":45},
+    {"id":2,"name":"Noah","img":"/static/media/kids2.00ade5399997adf1b5c4.jpg","cost":35},
+    {"id":3,"name":"Oliver","img":"/static/media/kids3.9e0bb3094420d109535e.jpg","cost":39},
+    {"id":4,"name":"Eva","img":"/static/media/kids4.4947620bd9d96e1e927a.jpg","cost":44},
+    {"id":5,"name":"Bella","img":"/static/media/kids5.74c5f480ffc9a653a282.jpg","cost":32},
+    {"id":6,"name":"William","img":"/static/media/kids6.1b0d408a585a8d97d172.jpg","cost":45},
+
+    {"id":1,"name":"April","img":"/static/media/collection-summer1.21abdfbfe5fb81a6c24d.jpg","cost":45},
+    {"id":2,"name":"Aurora","img":"/static/media/collection-summer2.ec6994740788a696dd03.jpg","cost":35},
+    {"id":3,"name":"Claire","img":"/static/media/collection-summer3.b65a89c0cca7ccf01c18.jpg","cost":39},
+    {"id":4,"name":"Daisy","img":"/static/media/collection-summer4.7d244d248fe4cdfc10b1.jpg","cost":44},
+    {"id":5,"name":"Florence","img":"/static/media/collection-summer5.f250c1abbca8a2007013.jpg","cost":32},
+    {"id":6,"name":"Freya","img":"/static/media/collection-summer6.b64a62bcc93bdabc574b.jpg","cost":45},
+
+    {"id":1,"name":"Iris","img":"/static/media/collection-spring1.901c80c4f1cdee59ffb4.jpg","cost":45},
+    {"id":2,"name":"Jade","img":"/static/media/collection-spring2.204f64c46b055497786e.jpg","cost":35},
+    {"id":3,"name":"Maxwell","img":"/static/media/collection-spring3.336da3f4e87f062eaafe.jpg","cost":39},
+    {"id":4,"name":"Pascal","img":"/static/media/collection-spring4.e3e0ffcb9c7b972cfddb.jpg","cost":44},
+    {"id":5,"name":"Owen","img":"/static/media/collection-spring5.67029f0236f7a0fe846d.jpg","cost":32},
+    {"id":6,"name":"Violet","img":"/static/media/collection-spring6.77acfcff65e342f984ba.jpg","cost":45}
+]

@@ -5,14 +5,12 @@ import Item_women from '../../components/Item/Item_women'
 import Product from '../../components/Product/Product'
 import './Women.css'
 
-function Women() {
+function Women({cart, setCart}) {
   return (
     <div className='women'>
-      <Product name="Women" image={women} />
+      <Product name="WOMEN" image={women} />
       <Item_header name="Skirt" />
-      <Item_women />
-      <Item_header name="Shirt" />
-      <Item_header name="Trousers" />
+      <Item_women cart={cart} setCart={setCart} />
     </div>
   )
 }

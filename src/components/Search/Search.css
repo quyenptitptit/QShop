@@ -1,0 +1,38 @@
+
+
+.search-element {
+    display: flex;
+    border: 1px solid black;
+    margin: 20px;
+    border-radius: 10px;
+    background-color: rgb(230, 211, 211);
+}
+
+.search-element-name{
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
+.search-element-name h1 {
+    padding: 0 50px;
+    font-size: 300%;
+}
+
+.img-search {
+    width: 10%;
+}
+
+.search-element-btn{
+    align-items: center;
+    padding: 10px;
+    font-size: 300%; 
+    cursor: pointer; 
+    border: solid black;
+    margin-left: 80px;
+    border-radius: 10px;
+}
+
+.search-element-btn:hover {
+    background-color: rgb(72, 109, 181);
+    color: white;
+}

@@ -1,13 +1,16 @@
 import './Navbar.css'
 import { FaSearch } from "react-icons/fa";
 import Dropdown from '../Dropdown/Dropdown';
-import { Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import data_kids from '../Item/Item_kids'
+import { useState } from 'react';
+import data from '../Search/Data.json'
+
 
 const DATA = [
     {
         label: 'Home',
-        path: '/',
+        path: '/home',
         children: []
     }, {
         label: 'Products',
@@ -41,44 +44,59 @@ const DATA = [
 ]
 
 
-function Navbar(props) {
+function Navbar({filteredData, setFilteredData}) {
+    
+    const [wordEntered, setWordEntered] = useState('')
 
-    const HandleOnChangeInput = (e) => {
-        props.setInputData(e.target.value)
-        // handleSearch(e.target.value)
+    const handleFilter = (event) => {
+        const searchWord = event.target.value;
+        setWordEntered(searchWord);
+        const newFilter = data.filter((value) => {
+            return value.name.toLowerCase().includes(searchWord.toLowerCase());
+        });
+
+        if (searchWord === "") {
+            setFilteredData([]);
+        } else {
+            setFilteredData(newFilter);
+        }
+    };
+
+    const clearInput = () => {
+        setFilteredData([]);
+        setWordEntered("");
+    };
+
+    const handleOnClick = () => {
+        setFilteredData([])
     }
 
-    const handleSearch = (search) => {
-        let sourceArray = data_kids;
-        let newArray = [];
-        if (search.length > 0) {
-          search.toLowerCase();
-          for (let item of sourceArray) {
-            if (item.name.toLowerCase().indexOf(search) > -1) {
-              newArray.push(item);
-            }
-          }
-        }
-        props.setInputData({
-          newArray
-        });
-      }
-    
 
     return (
         <div className='navbar'>
             <nav className='menu'>
-                {DATA.map(e => <div><Dropdown data={e}/></div>)}
+                {DATA.map(e => <div><Dropdown data={e} /></div>)}
             </nav>
-        
+
             <div>
                 <form className='search'>
-                    <input type='text' className='search-input' placeholder='Search ..' 
-                        value={props.inputData} onChange={HandleOnChangeInput} />
+                    <input type='text' className='search-input' placeholder='Search ..'
+                        value={wordEntered} onChange={handleFilter} />
                     <Link to='/search'><button onClick='' ><FaSearch /></button></Link>
                 </form>
+                {/* {filteredData.length != 0 && (
+                    <div className="dataResult">
+                        {filteredData.map((value, key) => (
+                            
+                                <button onClick={() => {
+                                    setFilteredData(value)
+                                }}><p>{value.name} - price: ${value.cost}</p></button>
+                            
+                        ))}
+                    </div>
+                )} */}
             </div>
-            
+
         </div>
 
     )

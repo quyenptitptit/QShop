@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
 import './Header.css'
 import { GrCart } from "@react-icons/all-files/gr/GrCart";
@@ -13,18 +13,20 @@ import { Outlet, useNavigate } from 'react-router-dom';
 
 function Header(props) {
 
-  const handleClickLogin = () => {
-    props.setConditionLogIn(true)
-  }
-
+  
+  
   // const handleClickSignin = () => {
   //   props.setConditionSignIn(true)
   // }
 
-  const handleClickCart = () => {
-    props.setConditionCart(true)
-  }
+  
 
+  const getCartTotal = () => {
+    return props.cart.reduce(
+      (sum, { quantity }) => sum + quantity,
+      0
+    );
+  };
 
   const handleClickLogOut = () => {
     localStorage.removeItem('user_login')
@@ -38,17 +40,17 @@ function Header(props) {
       <div className='header'>
 
         <div className='logo'>
-          <Link to="/" className='logo-link'>QSHOP<i class='fab fa-typo3' /></Link>
+          <Link to="/home" className='logo-link'>QSHOP<i class='fab fa-typo3' /></Link>
         </div>
 
         <div className='authen'>
           {/* <button onClick={handleClickSignin}>Sign In<BsPersonFill /></button> */}
-          <button onClick={handleClickCart} className='cart' ><GrCart className='cart' /></button>
+          <Link to='/cart'><button className='cart' ><GrCart className='cart' />({getCartTotal()})</button></Link>
           <button onClick={handleClickLogOut} className='logout'><BiLogOut /> </button>
         </div>
 
       </div>
-      <Navbar innputData={props.innputData} setInputData={props.setInputData} setValueSearch={props.setValueSearch} />
+      <Navbar filteredData={props.filteredData} setFilteredData={props.setFilteredData} />
       <Outlet />
     </>
   )

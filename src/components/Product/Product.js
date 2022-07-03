@@ -5,9 +5,11 @@ function Product(props) {
     <div className='product'>
         
         <div className='product-title'>
-          <h1>{props.name}</h1>
-          <h3>Spring Summer Design</h3>
+          <div className='product_title'>
+          <h1>{props.name} DESIGN</h1>
+          <h2>Spring Summer</h2>
           <h2>2022</h2>
+          </div>
         </div>
 
         <div className='product-img'>

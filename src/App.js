@@ -14,7 +14,7 @@ import Introduction from './pages/Introduction/Introduction';
 import Footer from './components/Footer/Footer'
 import Cart from './components/Cart/Cart'
 import Search from './components/Search/Search';
-import { get } from 'react-scroll/modules/mixins/scroller';
+import Checkout from './components/Checkout/Checkout';
 // import { connect } from 'react-redux';
 
 function App() {
@@ -40,20 +40,25 @@ function App() {
   //   Condition()
   // }, [])
 
+  const [cart, setCart] = useState([]);
+
+  const [filteredData, setFilteredData] = useState([])
 
   return (
     <div className='App'>
       <Routes>
-        <Route path='/' exact element={<Header setConditionLogIn={setConditionLogIn} setConditionCart={setConditionCart} inputData={inputData} setInputData={setInputData} />}>
+        <Route path='/' exact element={<Header cart={cart} setCart={setCart} filteredData={filteredData} setFilteredData={setFilteredData} />}>
           <Route path='/' element={<LogIn setConditionSignIn={setConditionSignIn} setConditionLogIn={setConditionLogIn} />} />
           <Route path='/home' element={<Home />} />
-          <Route path='/products' element={<Products />} />
-          <Route path='/men' element={<Men />} />
-          <Route path='/women' element={<Women />} />
-          <Route path='/kids' element={<Kids />} />
-          <Route path='/collections' element={<Collections />} />
+          <Route path='/products' element={<Products cart={cart} setCart={setCart}  />} />
+          <Route path='/men' element={<Men cart={cart} setCart={setCart} />} />
+          <Route path='/women' element={<Women cart={cart} setCart={setCart} />} />
+          <Route path='/kids' element={<Kids cart={cart} setCart={setCart} />} />
+          <Route path='/collections' element={<Collections cart={cart} setCart={setCart} />} />
           <Route path='/introduction' element={<Introduction />} />
-          <Route path='/search' element={<Search />} />
+          <Route path='/search' element={<Search filteredData={filteredData} cart={cart} setCart={setCart}/>} />
+          <Route path='/cart' element={<Cart cart={cart} setCart={setCart} />} />
+          <Route path='/checkout' element={<Checkout cart={cart} setCart={setCart} />} />
         </Route>
       </Routes>
 

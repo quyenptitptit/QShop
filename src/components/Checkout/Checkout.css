@@ -1,0 +1,26 @@
+.text-bill{
+    padding: 5px 10px;
+    font-size: 20px;
+    width:500px;
+    display: flex;
+    justify-content: end;
+    border-radius: 5px;
+}
+
+.label-element {
+    margin: 15px 0px;
+    display: flex;
+}
+
+.cart_img-pay {
+    background-image: url(https://vinhaudio77.vn/wp-content/uploads/2021/08/bigstock-205461277-15691418269121229889113.jpg);
+    width: 60%;
+    background-size: 920px;
+}
+
+.cart_main-pay {
+    min-height: 530px;
+    width: 40%;
+    background-color: white;
+    border-radius: 5px;
+}

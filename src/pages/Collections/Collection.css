@@ -21,9 +21,8 @@
     display: flex;
 }
 
-img {
+img.img-collection {
     display: block;
-    
     width: auto;
     height: auto;
   }

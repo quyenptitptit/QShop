@@ -5,13 +5,12 @@ import Item_kids from '../../components/Item/Item_kids'
 import kids from '../../images/kids.jpg'
 import './Kids.css'
 
-function Kids() {
+function Kids({cart, setCart}) {
   return (
     <div>
-      <Product name="Kids" image={kids} />
+      <Product name="KIDS BABY" image={kids} />
       <Item_header name="cute outfits for babies?" />
-      <Item_kids />
-      <Item_header name="cute baby accessories?" />
+      <Item_kids cart={cart} setCart={setCart} />
     </div>
   )
 }
