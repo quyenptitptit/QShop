@@ -1,15 +1,10 @@
 import React from 'react'
 import './Signin.css'
 import { FaFacebook, FaGoogle } from 'react-icons/fa';
-import { useState, useEffect } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useState } from 'react'
+
 
 function SignIn(props) {
-    // const [userName, setUserName] = useState('')
-    // const [passWord, setpassWord] = useState('')
-    // const [passWordAgain, setPassWordAgain] = useState('')
-    // const [email, setEmail] = useState('')
-
     const [errMessage, setErrMessage] = useState('')
 
     const [data, setData] = useState(JSON.parse(localStorage.getItem('user') || '[]'))
@@ -22,22 +17,6 @@ function SignIn(props) {
     const handleOnClickBack = () => {
         props.setConditionSignIn(false)
     }
-
-    // const handleOnChangeUsername = (e) => {
-    //     setUserName(e.target.value)
-    // }
-
-    // const handleOnChangePassword = (e) => {
-    //     setpassWord(e.target.value)
-    // }
-
-    // const handleOnChangePasswordAgain = (e) => {
-    //     setPassWordAgain(e.target.value)
-    // }
-
-    // const handleOnChangeEmail = (e) => {
-    //     setEmail(e.target.value)
-    // }
 
     const [inpval, setInpval] = useState({
         username: '',
@@ -60,11 +39,7 @@ function SignIn(props) {
     
     const handleOnClickSignUp = async (e) => {
        e.preventDefault()
-        // const newUser = {
-        //     userName,
-        //     passWord,
-        //     email
-        // }
+      
         const {username, password, passwordAgain, email} = inpval
 
         if (username === '') {
@@ -95,13 +70,6 @@ function SignIn(props) {
             localStorage.setItem('user',JSON.stringify([...data,inpval]))
         }
     }
-
-    // useEffect(() => {
-
-    //     localStorage.setItem('user',JSON.stringify([...data,inpval]))
-    //     // props.setData([...props.data,inpval])
-    //     // console.log("useEffect")
-    // }, []);
 
 
     return (

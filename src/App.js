@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import './App.css';
 import Header from './components/Header/Header';
@@ -15,40 +15,23 @@ import Footer from './components/Footer/Footer'
 import Cart from './components/Cart/Cart'
 import Search from './components/Search/Search';
 import Checkout from './components/Checkout/Checkout';
-// import { connect } from 'react-redux';
+
 
 function App() {
 
   const [conditionLogIn, setConditionLogIn] = useState(false)
   const [conditionSignIn, setConditionSignIn] = useState(false)
-  const [conditionCart, setConditionCart] = useState(false)
-  const [inputData, setInputData] = useState('')
+
 
   const [data, setData] = useState(JSON.parse(localStorage.getItem('user') || '[]'))
-
-  // const [login, setLogin] = useState([])
-
-  // const Condition = () => {
-  //   const getuser = localStorage.getItem('user_login')
-  //   if (getuser && getuser.length) {
-  //     const user = JSON.parse(getuser)
-  //     setLogin(user)
-  //   }
-  // }
-  // console.log(login)
-  // useEffect(() => {
-  //   Condition()
-  // }, [])
-
   const [cart, setCart] = useState([]);
-
   const [filteredData, setFilteredData] = useState([])
 
   return (
     <div className='App'>
       <Routes>
         <Route path='/' exact element={<Header cart={cart} setCart={setCart} filteredData={filteredData} setFilteredData={setFilteredData} />}>
-          <Route path='/' element={<LogIn setConditionSignIn={setConditionSignIn} setConditionLogIn={setConditionLogIn} />} />
+          <Route path='/' element={<SignIn setConditionSignIn={setConditionSignIn} setConditionLogIn={setConditionLogIn} />} />
           <Route path='/home' element={<Home />} />
           <Route path='/products' element={<Products cart={cart} setCart={setCart}  />} />
           <Route path='/men' element={<Men cart={cart} setCart={setCart} />} />
@@ -64,8 +47,7 @@ function App() {
 
       {conditionLogIn && <LogIn setConditionSignIn={setConditionSignIn} setConditionLogIn={setConditionLogIn}/>}
       {conditionSignIn && <SignIn setConditionLogIn={setConditionLogIn} setConditionSignIn={setConditionSignIn} data={data} setData={setData} />}
-      {conditionCart && <Cart setConditionCart={setConditionCart} />}
-      {inputData && <Search inputData={inputData} />}
+
       <Footer />
 
 
@@ -73,18 +55,5 @@ function App() {
   )
 }
 
-
-
-// const mapStateToProps = state => {
-//   return {
-//       started: state.app.started,
-//       isLoggedIn: state.user.isLoggedIn
-//   };
-// };
-
-// const mapDispatchToProps = dispatch => {
-//   return {
-//   };
-// };
 
 export default App;

@@ -3,7 +3,7 @@ import { FaFacebook, FaGoogle } from 'react-icons/fa';
 import { useState } from 'react';
 import './Login.css'
 import handleLoginApi from '../../../services/userService';
-import { useNavigate} from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 // import * as actions from '../../../store/actions'
 // import { connect } from 'react-redux'
 // import { push } from 'connected-react-router'
@@ -30,8 +30,8 @@ function LogIn(props) {
     }
 
     // const handleOnClickLogin = async () => {
-        
-        
+
+
     //     try {
     //         let data = await handleLoginApi(username, password)
     //         //console.log(data.message)
@@ -91,7 +91,7 @@ function LogIn(props) {
     })
 
     const handleOnChange = (e) => {
-        const {value, name} = e.target
+        const { value, name } = e.target
 
         setInpval(() => {
             return {
@@ -108,25 +108,25 @@ function LogIn(props) {
 
         const getUser = localStorage.getItem('user')
         console.log(getUser)
-        const {username, password} = inpval
+        const { username, password } = inpval
 
-        if(username === ''){
+        if (username === '') {
             setErrMessage('Username id field is required')
-        } 
-        else if(password === ''){
+        }
+        else if (password === '') {
             setErrMessage('Password id field is required')
         }
-        else if(password.length < 8){
+        else if (password.length < 8) {
             setErrMessage('Password length greater eight')
         }
         else {
             setErrMessage('')
-            if(getUser && getUser.length){
+            if (getUser && getUser.length) {
                 const userData = JSON.parse(getUser)
                 const userLogin = userData.filter((el, k) => {
                     return el.username === username && el.password === password
                 })
-                if(userLogin.length === 0) {
+                if (userLogin.length === 0) {
                     setErrMessage('invalid details')
                 }
                 else {
@@ -158,7 +158,7 @@ function LogIn(props) {
                             <div className='auth__group'>
                                 <input type='password' className='auth__input' placeholder='Enter your password...' onChange={handleOnChange} name='password' />
                             </div>
-                            <div className='errMessage' style = {{ color:'red', fontSize: 15}}>
+                            <div className='errMessage' style={{ color: 'red', fontSize: 15 }}>
                                 {errMessage}
                             </div>
                         </div>
