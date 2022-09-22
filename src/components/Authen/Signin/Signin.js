@@ -65,6 +65,7 @@ function SignIn(props) {
         }
         else {
             setErrMessage('')
+            localStorage.setItem('checkLogin', true)
             props.setConditionLogIn(true)
             props.setConditionSignIn(false)
             localStorage.setItem('user',JSON.stringify([...data,inpval]))

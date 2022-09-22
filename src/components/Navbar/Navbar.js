@@ -10,7 +10,7 @@ import data from '../Search/Data.json'
 const DATA = [
     {
         label: 'Home',
-        path: '/home',
+        path: '/',
         children: []
     }, {
         label: 'Products',
@@ -39,13 +39,23 @@ const DATA = [
         path: '/introduction',
         children: []
     }
+]
 
-
+const DATA2 = [
+    {
+        label: 'Home',
+        path: '/',
+        children: []
+    }, {
+        label: 'Introduction',
+        path: '/introduction',
+        children: []
+    }
 ]
 
 
-function Navbar({filteredData, setFilteredData}) {
-    
+function Navbar({ filteredData, setFilteredData }) {
+    const checkLogin = localStorage.getItem('checkLogin')
     const [wordEntered, setWordEntered] = useState('')
 
     const handleFilter = (event) => {
@@ -75,26 +85,20 @@ function Navbar({filteredData, setFilteredData}) {
     return (
         <div className='navbar'>
             <nav className='menu'>
-                {DATA.map(e => <div><Dropdown data={e} /></div>)}
+                {checkLogin==='true' ?
+                 DATA.map(e => <div><Dropdown data={e} /></div>)
+                : 
+                DATA2.map(e => <div><Dropdown data={e} /></div>)}
             </nav>
 
             <div>
-                <form className='search'>
-                    <input type='text' className='search-input' placeholder='Search ..'
-                        value={wordEntered} onChange={handleFilter} />
-                    <Link to='/search'><button onClick='' ><FaSearch /></button></Link>
-                </form>
-                {/* {filteredData.length != 0 && (
-                    <div className="dataResult">
-                        {filteredData.map((value, key) => (
-                            
-                                <button onClick={() => {
-                                    setFilteredData(value)
-                                }}><p>{value.name} - price: ${value.cost}</p></button>
-                            
-                        ))}
-                    </div>
-                )} */}
+                {checkLogin === 'true' &&
+                    <form className='search'>
+                        <input type='text' className='search-input' placeholder='Search ..'
+                            value={wordEntered} onChange={handleFilter} />
+                        <Link to='/search'><button onClick='' ><FaSearch /></button></Link>
+                    </form>
+                }
             </div>
 
         </div>

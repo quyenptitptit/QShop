@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { useRecoilValue } from 'recoil';
+import { checkLoginRecoil } from './recoil/checkLogin';
 import { Routes, Route } from 'react-router-dom';
 import './App.css';
 import Header from './components/Header/Header';
@@ -22,35 +24,33 @@ function App() {
   const [conditionLogIn, setConditionLogIn] = useState(false)
   const [conditionSignIn, setConditionSignIn] = useState(false)
 
-
   const [data, setData] = useState(JSON.parse(localStorage.getItem('user') || '[]'))
   const [cart, setCart] = useState([]);
   const [filteredData, setFilteredData] = useState([])
 
+  const checkLogin = useRecoilValue(checkLoginRecoil)
+  localStorage.setItem('checkLogin', checkLogin)
+
   return (
     <div className='App'>
       <Routes>
-        <Route path='/' exact element={<Header cart={cart} setCart={setCart} filteredData={filteredData} setFilteredData={setFilteredData} />}>
-          <Route path='/' element={<SignIn setConditionSignIn={setConditionSignIn} setConditionLogIn={setConditionLogIn} />} />
-          <Route path='/home' element={<Home />} />
-          <Route path='/products' element={<Products cart={cart} setCart={setCart}  />} />
+        <Route path='/' exact element={<Header cart={cart} setCart={setCart} filteredData={filteredData} setFilteredData={setFilteredData} setConditionSignIn={setConditionSignIn} />}>
+          {/* <Route path='/sign-in' element={<SignIn setConditionSignIn={setConditionSignIn} setConditionLogIn={setConditionLogIn} />} /> */}
+          <Route path='/' element={<Home />} />
+          <Route path='/products' element={<Products cart={cart} setCart={setCart} />} />
           <Route path='/men' element={<Men cart={cart} setCart={setCart} />} />
           <Route path='/women' element={<Women cart={cart} setCart={setCart} />} />
           <Route path='/kids' element={<Kids cart={cart} setCart={setCart} />} />
           <Route path='/collections' element={<Collections cart={cart} setCart={setCart} />} />
           <Route path='/introduction' element={<Introduction />} />
-          <Route path='/search' element={<Search filteredData={filteredData} cart={cart} setCart={setCart}/>} />
+          <Route path='/search' element={<Search filteredData={filteredData} cart={cart} setCart={setCart} />} />
           <Route path='/cart' element={<Cart cart={cart} setCart={setCart} />} />
           <Route path='/checkout' element={<Checkout cart={cart} setCart={setCart} />} />
         </Route>
       </Routes>
-
-      {conditionLogIn && <LogIn setConditionSignIn={setConditionSignIn} setConditionLogIn={setConditionLogIn}/>}
+      {conditionLogIn && <LogIn setConditionSignIn={setConditionSignIn} setConditionLogIn={setConditionLogIn} />}
       {conditionSignIn && <SignIn setConditionLogIn={setConditionLogIn} setConditionSignIn={setConditionSignIn} data={data} setData={setData} />}
-
       <Footer />
-
-
     </div>
   )
 }

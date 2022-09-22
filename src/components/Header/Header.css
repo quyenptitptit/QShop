@@ -23,7 +23,22 @@ div.authen {
     margin-left: 20px;
 }
 
+div.authen-signin {
+    width: 9%;
+    display: block;
+    margin-left: 20px;
+}
+
 .authen button {
+    text-decoration: none;
+    font-size: 20px;
+    padding: 5px 15px;
+    margin: 15px 5px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.authen-signin button {
     text-decoration: none;
     font-size: 20px;
     padding: 5px 15px;
@@ -39,3 +54,5 @@ div.authen {
 .authen .cart:hover {
     background-color: rgb(72, 109, 181);
 }
+
+

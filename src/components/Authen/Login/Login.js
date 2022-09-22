@@ -131,8 +131,9 @@ function LogIn(props) {
                 }
                 else {
                     setErrMessage('')
+                    localStorage.setItem('checkLogin', true)
                     localStorage.setItem('user_login', JSON.stringify(getUser))
-                    history('/home')
+                    history('/')
                     props.setConditionLogIn(false)
                 }
             }

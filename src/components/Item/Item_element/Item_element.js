@@ -4,6 +4,7 @@ import '../Item.css'
 
 
 function Item_element({ products, cart, setCart }) {
+    const checkLogin = localStorage.getItem('checkLogin')
 
     const addToCart = (product) => {
         let newCart = [...cart];

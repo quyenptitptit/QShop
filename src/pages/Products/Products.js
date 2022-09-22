@@ -11,8 +11,6 @@ function Products({cart, setCart}) {
       <Product name="PRODUCTS" image={products} />
       <Item_header name="What's new?" />
       <Item_product cart={cart} setCart={setCart} />
-
-      
     </div>
   )
 }
